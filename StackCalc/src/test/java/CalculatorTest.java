@@ -191,6 +191,11 @@ public class CalculatorTest {
     }
 
     @Test
+    void missing_parenthesis_test() {
+        assertThrows(RuntimeException.class, () -> calculator.compute("(1+2*3"));
+    }
+
+    @Test
     void first_random_calculation() {
         int actual = calculator.compute("5*(2+4)-8/(3+1)");
         int expected = 28;
@@ -215,6 +220,13 @@ public class CalculatorTest {
     void fourth_random_calculation() {
         int actual = calculator.compute("10+2*6/2-7");
         int expected = 9;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void fifth_random_calculation() {
+        int actual = calculator.compute("-(4+(-5))");
+        int expected = 1;
         assertEquals(actual, expected);
     }
 }

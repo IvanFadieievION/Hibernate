@@ -22,27 +22,30 @@ public class Calculator {
             } else {
                 if (!operand.isEmpty()) {
                     pushOperandToStack(operands, operand);
-                }
+                } else if (operands.size() > 1) {
 
-                Integer first = operands.pop();
-                Integer second = operands.pop();
+                    Integer first = operands.pop();
+                    Integer second = operands.pop();
 
-                switch (ch) {
-                    case '+':
-                        operands.push(second + first);
-                        break;
-                    case '-':
-                        operands.push(second - first);
-                        break;
-                    case '/':
-                        if (first == 0 || second == 0) {
-                            throw new ArithmeticException("Can't divide by zero");
-                        }
-                        operands.push(second / first);
-                        break;
-                    case '*':
-                        operands.push(second * first);
-                        break;
+                    switch (ch) {
+                        case '+':
+                            operands.push(second + first);
+                            break;
+                        case '-':
+                            operands.push(second - first);
+                            break;
+                        case '/':
+                            if (first == 0 || second == 0) {
+                                throw new ArithmeticException("Can't divide by zero");
+                            }
+                            operands.push(second / first);
+                            break;
+                        case '*':
+                            operands.push(second * first);
+                            break;
+                    }
+                } else {
+                    checkForLastOperator(operands, ch);
                 }
             }
         }
@@ -53,6 +56,7 @@ public class Calculator {
     }
 
     private String inFixToPostFix(String infixExpression) {
+        checkForParenthesis(infixExpression);
 
         StringBuilder postFixExpression = new StringBuilder();
         Stack<Character> operatorStack = new Stack<>();
@@ -75,6 +79,13 @@ public class Calculator {
         }
         addOperatorsToPostFixExpression(operatorStack, postFixExpression);
         return postFixExpression.toString();
+    }
+
+    private void checkForParenthesis(String infixExpression) {
+        if (infixExpression.contains("(") && !infixExpression.contains(")")
+                || infixExpression.contains(")") && !infixExpression.contains("(")) {
+            throw new RuntimeException("Parenthesis missing");
+        }
     }
 
     private int appendDigitsToOperand(int i, String postFixExpression, StringBuilder operand) {
@@ -137,7 +148,10 @@ public class Calculator {
     }
 
     private boolean isUnaryMinus(String infixExpression, int i) {
-        return  i == 0 || infixExpression.charAt(i - 1) == '(' || isOperator(infixExpression.charAt(i - 1));
+        if (i == 0) {
+            return infixExpression.charAt(i + 1) != '(';
+        }
+        return infixExpression.charAt(i - 1) == '(' || isOperator(infixExpression.charAt(i - 1));
     }
 
     private boolean isOperator(char ch) {
@@ -169,5 +183,10 @@ public class Calculator {
         if (operand.toString().equals("--")) {
             operand.setLength(0);
         }
+    }
+
+    private void checkForLastOperator(Stack<Integer> operands, char ch) {
+        operands.push(operands.pop()
+                * Character.getNumericValue(ch + '1'));
     }
 }
