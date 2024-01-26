@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Calculator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Calculator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ExpressionEvaluator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ExpressionEvaluator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/InputParser/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/InputParser/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Operand/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Operand/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperandsStack/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperandsStack/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperatorHandler/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperatorHandler/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperatorStack/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OperatorStack/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Tests/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Tests/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Validator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Validator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postfix_parsing/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/postfix_parsing/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

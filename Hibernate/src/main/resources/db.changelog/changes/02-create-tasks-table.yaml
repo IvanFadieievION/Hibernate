@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-task-table
+      author: ivan fadieiev
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: start_time
+                  type: DATETIME
+              - column:
+                  name: dead_line_time
+                  type: DATETIME
+              - column:
+                  name: priority
+                  type: varchar(255)
